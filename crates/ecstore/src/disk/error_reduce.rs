@@ -67,7 +67,7 @@ pub fn reduce_errs(errors: &[Option<Error>], ignored_errs: &[Error]) -> (usize, 
     let (best_err, best_count) = err_counts
         .into_iter()
         .max_by(|(_, c1), (_, c2)| c1.cmp(c2))
-        .unwrap_or((nil_error.clone(), 0));
+        .unwrap_or((nil_error, 0));
 
     // Compare nil errors with the top non-nil error and prefer the nil error
     if nil_count > best_count || (nil_count == best_count && nil_count > 0) {

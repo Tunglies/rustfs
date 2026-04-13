@@ -104,7 +104,7 @@ pub fn sign_v2(
                 "Date",
                 d2.format(&format_description::well_known::Rfc2822)
                     .unwrap()
-                    .to_string()
+                    
                     .parse()
                     .unwrap(),
             );

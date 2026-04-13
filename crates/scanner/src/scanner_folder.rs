@@ -967,7 +967,7 @@ impl FolderScanner {
                         ..Default::default()
                     })
                     .await
-                    .map_err(|e| ScannerError::Other(e.to_string()))?;
+                    .map_err(|e| ScannerError::Other(e))?;
                 }
 
                 resolver.bucket = bucket.clone();

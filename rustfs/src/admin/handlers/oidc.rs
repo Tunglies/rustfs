@@ -282,7 +282,7 @@ impl Operation for GetOidcConfigHandler {
                 role_policy: provider.config.role_policy.clone(),
                 groups_claim: provider.config.groups_claim.clone(),
                 email_claim: provider.config.email_claim.clone(),
-                username_claim: provider.config.username_claim.clone(),
+                username_claim: provider.config.username_claim,
             })
             .collect();
 

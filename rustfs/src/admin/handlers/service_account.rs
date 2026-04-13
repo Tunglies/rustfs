@@ -195,7 +195,7 @@ impl Operation for AddServiceAccount {
 
         create_req
             .validate()
-            .map_err(|e| S3Error::with_message(InvalidRequest, e.to_string()))?;
+            .map_err(|e| S3Error::with_message(InvalidRequest, e))?;
 
         let session_policy = if let Some(policy) = &create_req.policy {
             let policy_bytes =
@@ -530,7 +530,7 @@ impl Operation for UpdateServiceAccount {
 
         update_req
             .validate()
-            .map_err(|e| S3Error::with_message(InvalidRequest, e.to_string()))?;
+            .map_err(|e| S3Error::with_message(InvalidRequest, e))?;
 
         let (cred, owner) =
             check_key_valid(get_session_token(&req.uri, &req.headers).unwrap_or_default(), &input_cred.access_key).await?;

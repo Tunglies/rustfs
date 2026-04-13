@@ -288,7 +288,7 @@ impl HashReader {
             Ok(Self {
                 inner,
                 size,
-                checksum: md5hex.clone(),
+                checksum: md5hex,
                 actual_size,
                 diskable_md5,
                 bytes_read: 0,
@@ -370,7 +370,7 @@ impl HashReader {
 
         if let Some(checksum) = cs {
             if checksum.checksum_type.trailing() {
-                self.trailer_s3s = trailing_headers.clone();
+                self.trailer_s3s = trailing_headers;
             }
 
             self.content_hash = Some(checksum.clone());
